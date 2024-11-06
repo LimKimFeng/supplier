@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer('jml_masuk');
             $table->foreignId('id_suplier')->constrained('suplier');
             $table->timestamps();
+
+            $table->foreign('id_suplier')->references('id_suplier')->on('suplier')->onDelete('cascade');
         });
     }
 
